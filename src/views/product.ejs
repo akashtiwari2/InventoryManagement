@@ -17,7 +17,10 @@
         <td><%= product.desc %></td>
         <td scope="col"><%= product.price %></td>
         <td><img src="<%=product.imageUrl%>" alt="" srcset="" style="max-width: 100px;"></td>
-        <td><a href="/update_product/<%= product.id %>"><button type="button" class="btn btn-primary">Update</button> </a> <a href="/delete_product/<%= product.id %>"> <button type="button" class="btn btn-primary">Delete</button></a> </td>
+        <td><a href="/update_product/<%= product.id %>"><button type="button" class="btn btn-primary">Update</button> </a> 
+          <!-- <a href="/delete_product/<%= product.id %>"> <button type="button" class="btn btn-primary">Delete</button></a> -->
+           <button type="button" onclick="deleteProduct('<%= product.id %>')" class="btn btn-danger">Delete</button>
+         </td>
       </tr>
     <% }) %>
      

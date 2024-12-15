@@ -36,7 +36,8 @@ export default class ProductModel{
 
 static delete(id)
 {
-   products.splice(id-1,1);
+  let ind=products.findIndex(curr=>id==curr.id)
+   products.splice(ind,1);
 
 }
 }

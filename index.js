@@ -6,7 +6,7 @@ import validation from "./middlewares/validation.middleware.js";
 const server = express();
 
 //parse from data
-
+server.use(express.static('Public'));
 server.use(express.urlencoded({extended:true}))
 
 //seting view engine  using middleware
@@ -20,6 +20,7 @@ server.get("/update_product/:id",ProductControllerObj.updateProduct)
 server.get("/new", ProductControllerObj.getAddFrom);
 server.post('/',validation,ProductControllerObj.submit)
 server.post('/update_product',ProductControllerObj.updatePost)
-server.get('/delete_product/:id',ProductControllerObj.deleteProduct)
+server.post('/delete_product/:id',ProductControllerObj.deleteProduct)
 server.use(express.static("src/views"));
+server.use(express.static('Public'));
 server.listen(3400);
